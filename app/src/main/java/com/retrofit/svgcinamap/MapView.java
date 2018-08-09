@@ -89,7 +89,7 @@ public class MapView extends View {
         }
         ProviceItem selectItem = null;
         for (ProviceItem proviceItem : itemList) {
-            if (proviceItem.isTouch(x / 1.5f, y / 1.5f)) {
+            if (proviceItem.isTouch(x / scale, y / scale)) {
                 selectItem = proviceItem;
                 Toast.makeText(context, "你选择的是  ：" + proviceItem.getProvice(), Toast.LENGTH_LONG).show();
             }
@@ -133,7 +133,7 @@ public class MapView extends View {
     protected void onDraw(Canvas canvas) {
         if (itemList != null) {
             canvas.save();
-            canvas.scale(1.5f, 1.5f);
+            canvas.scale(scale, scale);
             for (ProviceItem proviceItem : itemList) {
                 if (proviceItem != select) {
                     proviceItem.drawItem(canvas, paint, false);
