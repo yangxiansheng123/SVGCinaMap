@@ -71,6 +71,7 @@ public class MapView extends View {
                     }
                     itemList.get(i).setDrawColor(color);
                 }
+                requestLayout();
                 postInvalidate();
             }
         };
@@ -96,6 +97,7 @@ public class MapView extends View {
         if (selectItem != null) {
             select = selectItem;
             postInvalidate();
+            requestLayout();
         }
     }
 
